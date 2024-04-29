@@ -8,22 +8,35 @@ const options = {
   },
 };
 
+
+
 fetch(
   "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
   options
 )
   .then((response) => response.json())
-  .then((response) => console.log(response))
-  .catch((err) => console.error(err));
+  .then((response) => {
+    console.log(response.results);
+
+    let movieList = response.results;
+    movieList.forEach((element) => {
+      console.log(element);
+      let div1 = document.createElement("div");
+      div1.innerHTML = `<div id="movieCards">
+      <img src="" alt="영화 이미지"/>
+      <h3>영화제목</h3>
+      <p>줄거리 요약</p>
+      <p>평점 : </p>
+    </div>`
+      document.getElementById("movieCards").appendChild(div1);
+    });
+  });
+
+// appendChild
+
+// document.createElement로 요소를 하나 생성하고 appendChild 메소드를 사용해서 document에 요소를 삽입
 
 
-  
-alert(`영화id: ${영화id}`);
-
-// 검색 구현
-// 1. 영화카드리스트 선택하기
-// 2. 영화카드리스트 클릭하면 영화상세페이지로 이동 || 입력값에 따라 포함여부 확인
-// 3. 영화 상세페이지에서 영화정보 출력
 
 //▼ 다크 모드 적용 토글
 if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -36,5 +49,4 @@ document.getElementById("toggleTheme").addEventListener("click", () => {
 
 document.getElementById("search-form").addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log(1);
 });

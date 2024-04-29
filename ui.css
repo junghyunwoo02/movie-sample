@@ -41,20 +41,20 @@ input[type="text"] {
   color: #0d3b66;
   padding: 0.8rem 1rem 0.8rem 1rem;
   max-width: 100px;
-    width: 100%;
+  width: 100%;
 }
 
 #toggleTheme.mode-btn {
-    border: 0;
-    outline: none;
-    border-radius: 20px;
-    font-size: 1.3em;
-    background-color: #ffde00;
-    margin-left: 1em;
-    color: #0d3b66;
-    padding: 0.1rem 1rem 0.1rem 1rem;
-    max-width: 100px;
-    width: 100%;
+  border: 0;
+  outline: none;
+  border-radius: 20px;
+  font-size: 1.3em;
+  background-color: #ffde00;
+  margin-left: 1em;
+  color: #0d3b66;
+  padding: 0.1rem 1rem 0.1rem 1rem;
+  max-width: 100px;
+  width: 100%;
 }
 
 .logo {

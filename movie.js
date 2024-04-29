@@ -4,16 +4,14 @@ const options = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYTgwODFjYzFmOGEwYjg4ZmMwZTMzYzQ0ODY1YjU5MCIsInN1YiI6IjY2MmIzZTUwZTI5NWI0MDExZTEzZjI3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WlRHOXBB3737zowmOYYXPDqttXSiK3G0VahRmYzZBx4",
-  },
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYTgwODFjYzFmOGEwYjg4ZmMwZTMzYzQ0ODY1YjU5MCIsInN1YiI6IjY2MmIzZTUwZTI5NWI0MDExZTEzZjI3MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.WlRHOXBB3737zowmOYYXPDqttXSiK3G0VahRmYzZBx4"
+  }
 };
 
+let topMovies;
+let movieMap = new Map();
 
-
-fetch(
-  "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
-  options
-)
+fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options)
   .then((response) => response.json())
   .then((response) => {
     console.log(response.results);
@@ -27,7 +25,7 @@ fetch(
       <h3>영화제목</h3>
       <p>줄거리 요약</p>
       <p>평점 : </p>
-    </div>`
+    </div>`;
       document.getElementById("movieCards").appendChild(div1);
     });
   });
@@ -35,8 +33,6 @@ fetch(
 // appendChild
 
 // document.createElement로 요소를 하나 생성하고 appendChild 메소드를 사용해서 document에 요소를 삽입
-
-
 
 //▼ 다크 모드 적용 토글
 if (window.matchMedia("(prefers-color-scheme: dark)").matches) {

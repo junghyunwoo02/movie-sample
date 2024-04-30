@@ -98,6 +98,10 @@ img {
   border-radius: 15px;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .card-img-top {
   width: 15em;
   height: 22em;

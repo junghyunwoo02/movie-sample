@@ -81,9 +81,11 @@ img {
 }
 
 #movieCards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  justify-items: center;
   color: #ffffff;
+  gap: 70px;
 }
 
 .card {

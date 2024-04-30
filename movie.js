@@ -14,8 +14,8 @@ let movieMap = new Map(); // 영화 제목과 카드를 매핑할 맵 생성
 fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options)
   .then((response) => response.json())
   .then((response) => {
-    let movies = response["results"]; // 가져온 json 자료들을 movies에 할당
-    topMovies = response["results"]; // map으로 할당
+    let movies = response.results; // 가져온 json 자료들을 movies에 할당
+    topMovies = response.results; // map으로 할당
 
     //▼불러온 results 배열들을 돌리면서 각각 카드 만들기
     movies.forEach((a) => {
